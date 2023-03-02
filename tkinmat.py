@@ -23,7 +23,11 @@ def button_clear():
     ent.delete(0,END)
 
 def button_delete():
-    print(" ")
+    new=ent.get()
+    global n_new
+    n_new=int(new)
+    ent.delete(-1)
+    ent.insert(n_new) #have doubt 
 
 def button_add():
     first_number=ent.get()
@@ -98,7 +102,7 @@ buttonmul = Button(window, text="x", command=button_mul,width=5,height=2,bg="#FF
 buttondiv = Button(window, text="/", command=button_div,width=5,height=2,bg="#FFCC00")
 
 buttonAC = Button(window, text="AC", command=button_clear,width=15,height=2,bg="#BDBDBD")
-buttondelete = Button(window, text="<=", command=lambda: button_delete(),width=15,height=2,bg="#BDBDBD")
+buttondelete = Button(window, text="<=", command=button_delete,width=15,height=2,bg="#BDBDBD")
 
 
 button7.grid(row=1,column=0,padx=5,pady=1)
